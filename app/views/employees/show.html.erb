@@ -1,0 +1,27 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+  <h1 class="display-5 ">
+    <%= @employee.name %>
+  </h1>
+
+  <p class="col-md-8 fs-4">
+    <strong>Email:</strong>
+    <%= @employee.email %>
+  </p>
+
+  <p class="col-md-8 fs-4">
+    <strong>Phone:</strong>
+    <%= @employee.phone %>
+  </p>
+  <p class="col-md-8 fs-4">
+  <strong>Projects Title:</strong>
+  <% @employee.projects.each do |project| %>
+    <%= link_to project.title, project, class: "btn btn-outline-success" %>
+  <% end %>
+  </p>
+
+  <%= link_to 'Edit', edit_employee_path(@employee), class:"btn btn-secondary" %>
+  <%= link_to 'Back', employees_path, class:"btn btn-dark" %>
+
+  </div>
+</div>

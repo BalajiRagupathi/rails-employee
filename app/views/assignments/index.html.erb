@@ -1,0 +1,29 @@
+<h1>Assignments</h1>
+
+<%= link_to 'New Assignment', new_assignment_path, class:"btn m-1 float-end btn-primary"  %>
+
+<table class="table table-bordered text-center table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Employee Name</th>
+      <th>Employee Phone</th>
+      <th>Project Title</th>
+      <th>Project Description</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignments.each do |assignment| %>
+      <tr>
+        <td><%= assignment.employee.name %></td>
+        <td><%= assignment.employee.phone %></td>
+        <td><%= assignment.project.title %></td>
+        <td><%= assignment.project.description %></td>
+        <td><%= link_to 'Show', assignment, class: "btn btn-outline-success" %></td>
+        <td><%= link_to 'Edit', edit_assignment_path(assignment), class: "btn btn-outline-secondary" %></td>
+        <td><%= link_to 'Destroy', assignment, class: "btn btn-outline-danger" , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

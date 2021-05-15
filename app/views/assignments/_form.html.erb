@@ -1,0 +1,27 @@
+<%= form_with(model: assignment) do |form| %>
+  <% if assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+        <% assignment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :employee_id, class:"form-label"  %>
+    <%= form.text_field :employee_id, class:"form-control", placeholder:"Enter Employee Id" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :project_id, class:"form-label"  %>
+    <%= form.text_field :project_id, class:"form-control", placeholder:"Enter Project Id" %>
+  </div>
+
+  <div class="actions mb-3">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>

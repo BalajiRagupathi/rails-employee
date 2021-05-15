@@ -1,0 +1,29 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 ">Project Details</h1>
+    <p class="col-md-8 fs-4">
+      <strong>Title:</strong>
+      <%= @project.title %>
+    </p>
+
+    <p class="col-md-8 fs-4">
+      <strong>Description:</strong>
+      <%= @project.description %>
+    </p>
+
+    <p class="col-md-8 fs-4">
+      <strong>Status:</strong>
+      <%= @project.status %>
+    </p>
+
+    <p class="col-md-8 fs-4">
+      <strong>Employees Name:</strong>
+      <% @project.employees.each do |employee| %>
+        <%= link_to employee.name, employee, class: "btn btn-outline-success" %>
+      <% end %>
+    </p>
+
+    <%= link_to 'Edit', edit_project_path(@project), class:"btn btn-secondary" %>
+    <%= link_to 'Back', projects_path, class:"btn btn-dark" %>
+  </div>
+</div>

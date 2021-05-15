@@ -1,0 +1,32 @@
+<h1>Employees</h1>
+<%= link_to 'New Employee', new_employee_path, class:"btn m-1 float-end btn-primary" %>
+
+<table class="table text-center table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Projects Count</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.id %></td>
+        <td><%= employee.name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.phone %></td>
+        <td><%= employee.projects.length %></td>
+        <td><%= link_to 'Show', employee, class: "btn btn-outline-success" %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee), class: "btn btn-outline-secondary" %></td>
+        <td><%= link_to 'Destroy', employee, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

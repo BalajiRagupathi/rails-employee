@@ -1,0 +1,17 @@
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 ">Assignment Details</h1>
+    <p class="col-md-8 fs-4">
+      <strong>Employee:</strong>
+      <%= link_to @assignment.employee.name, @assignment.employee, class: "btn btn-outline-success" %>
+    </p>
+
+    <p class="col-md-8 fs-4">
+      <strong>Project:</strong>
+        <%= link_to @assignment.project.title, @assignment.project, class: "btn btn-outline-success" %>
+    </p>
+
+    <%= link_to 'Edit', edit_assignment_path(@assignment), class:"btn btn-secondary" %>
+    <%= link_to 'Back', assignments_path, class:"btn btn-dark" %>
+  </div>
+</div>
