@@ -52,7 +52,7 @@ group :test do
   gem 'webdrivers'
 end
 
-group: production,: staging do
+group: production do
   gem 'rails_12factor'
 end
 
